@@ -1,3 +1,22 @@
+# Hardware
+
+## MyGica A681
+
+  - Cypress FX2 (CY7C68013A-56 LTXC)
+  - EEPROM for firmware
+  - Panasonic/Socionext ATSC VSB/QAM demodulator (MN88436)
+  - MaxLinear MxL603 tuner
+  - 24 MHz crystal
+
+## Unbranded (labeled "ATSC") PT681
+
+  - Cypress FX2 (CY7C68013A-56 LTXC)
+  - EEPROM for firmware
+  - Panasonic/Socionext ATSC VSB/QAM demodulator (MN88436)
+  - MaxLinear MxL608 tuner
+  - 24 MHz crystal
+
+
 # Protocol
 
 
