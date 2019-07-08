@@ -1,6 +1,9 @@
-# Hardware
+# Notes
 
-## MyGica A681
+
+## Hardware
+
+### MyGica A681
 
   - Cypress FX2 (CY7C68013A-56 LTXC)
   - EEPROM for firmware
@@ -8,7 +11,7 @@
   - MaxLinear MxL603 tuner
   - 24 MHz crystal
 
-## Unbranded (labeled "ATSC") PT681
+### Unbranded (labeled "ATSC") PT681
 
   - Cypress FX2 (CY7C68013A-56 LTXC)
   - EEPROM for firmware
@@ -17,16 +20,16 @@
   - 24 MHz crystal
 
 
-# Protocol
+## Protocol
 
 
-## Commands
+### Commands
 
 
-### I2C Write
+#### I2C Write
 
 
-#### Overview
+##### Overview
 
 Command format:
 
@@ -44,7 +47,7 @@ To use this command, make a USB bulk write with the command, then a bulk
 read to read the 1-byte response.
 
 
-#### Detailed description
+##### Detailed description
 
 This command is used to set registers in the demodulator and tuner ICs.
 For example, to write `0x00` to register address `0xFF` in the tuner
@@ -78,10 +81,10 @@ register write sequence, in practice all the I2C Write commands we'll
 ever send will be of the form `08 XX 02 YY ZZ`.
 
 
-### I2C Read
+#### I2C Read
 
 
-#### Overview
+##### Overview
 
 Command format:
 
@@ -102,7 +105,7 @@ read to get the status byte and the data returned from the I2C Read
 transaction.
 
 
-#### Detailed description
+##### Detailed description
 
 This command is used to read registers in the demodulator and tuner ICs.
 The generic command and response formats are the same for both the tuner
