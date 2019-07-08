@@ -22,6 +22,18 @@
 
 ## Protocol
 
+The protocol has essentially two channels, with each channel going over
+different USB Bulk endpoints.
+
+The first is the command channel, which uses endpoint 1. This is the
+channel used to send control commands to the device, including I2C read
+and write commands.
+
+The second is the data channel, which uses endpoint 2. The data channel
+exclusively contains the raw transport stream (TS) data from the
+demodulator, sent from the device 8192 bytes at a time in every bulk
+read response.
+
 
 ### Commands
 
