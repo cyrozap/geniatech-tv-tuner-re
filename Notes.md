@@ -172,3 +172,28 @@ So, as with the I2C Write command, while the I2C Read command is
 flexible in theory, in practice it is only used in two ways:
 `09 01 01 XX YY` to read from the demodulator, and `09 02 01 XX fb YY`
 to read from the tuner.
+
+
+#### IR Receive
+
+
+##### Overview
+
+Command format:
+
+ - 1B: Command byte (`0x10`)
+
+Response format:
+
+ - 2B: The IR key code.
+
+To use this command, make a USB bulk write with the command, then a bulk
+read to get the the IR data.
+
+
+##### Detailed description
+
+This command is used to poll the IR receiver for new IR data. If nothing
+new was received, the response is `ff ff`. Otherwise, the response is of
+the form `XX YY`, where `XX` is either `0x00` or `0x08` and `YY` is the
+code of a key press.
