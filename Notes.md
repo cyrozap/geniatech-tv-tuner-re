@@ -197,3 +197,15 @@ This command is used to poll the IR receiver for new IR data. If nothing
 new was received, the response is `ff ff`. Otherwise, the response is of
 the form `XX YY`, where `XX` is either `0x00` or `0x08` and `YY` is the
 code of a key press.
+
+
+### Unknown Commands
+
+ - `0e 80 XX`
+   - `XX` is either `0x00` or `0x01`.
+ - `36 03 00`
+ - `37 03 00`
+   - Seen only once as just a single `37` command byte with no parameter
+     bytes following.
+ - `51`
+ - `de 00`
