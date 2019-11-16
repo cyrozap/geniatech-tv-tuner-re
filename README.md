@@ -27,3 +27,16 @@ My reasons for targeting these devices:
 ## Reverse engineering notes
 
 Hardware and protocol notes can be found in [Notes.md](./Notes.md).
+
+
+## Linux driver
+
+Shortly after I published this repo, I discovered that this protocol
+matches that of the [dvb-usb-v2/dvbsky][dvbsky] kernel driver, so it
+shouldn't be too difficult to add support for this device. All that
+needs to be done is add drivers for the tuner (MxL603/MxL608) and
+the demodulator (MN88436), then create the proper `mygica_a681_props`
+struct and `dvbsky_mygica_a681_attach` function for the device.
+
+
+[dvbsky]: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/usb/dvb-usb-v2/dvbsky.c
