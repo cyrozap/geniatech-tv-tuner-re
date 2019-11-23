@@ -31,6 +31,7 @@ p_a681 = Proto("a681", "Geniatech A681/PT681 TV tuner protocol")
 local commands = {
     [0x08] = "I2C Write",
     [0x09] = "I2C Read",
+    [0x0e] = "GPIO Control",
     [0x10] = "IR Read",
     [0x36] = "Begin TS Dump?",
     [0x37] = "Tuner/Demod Hard Reset?"
@@ -42,11 +43,17 @@ local i2c_addresses = {
     [0x60] = "MxL603/MxL608"
 }
 
+local gpio_ports = {
+    [0x80] = "LNA Power?"
+}
+
 -- Create the fields exhibited by the protocol.
 p_a681.fields.command = ProtoField.uint8("a681.command", "Command", base.HEX, commands)
 p_a681.fields.i2c_address = ProtoField.uint8("a681.command.i2c.address", "I2C Device Address", base.HEX, i2c_addresses)
 p_a681.fields.i2c_register = ProtoField.uint8("a681.command.i2c.register", "I2C Register", base.HEX)
 p_a681.fields.i2c_data = ProtoField.uint8("a681.command.i2c.data", "I2C Data", base.HEX)
+p_a681.fields.gpio_port = ProtoField.uint8("a681.command.gpio.port", "GPIO Port", base.HEX, gpio_ports)
+p_a681.fields.gpio_value = ProtoField.uint8("a681.command.gpio.value", "GPIO Value", base.HEX)
 
 p_a681.fields.status = ProtoField.uint8("a681.status", "A681 status", base.HEX)
 
@@ -87,6 +94,9 @@ local function dissect_control_command(buffer, pinfo, subtree)
         else
             subtree:add(p_a681.fields.i2c_register, buffer(4,1))
         end
+    elseif (command:uint() == 0x0e) then
+        subtree:add(p_a681.fields.gpio_port, buffer(1,1))
+        subtree:add(p_a681.fields.gpio_value, buffer(2,1))
     elseif (command:uint() == 0x10) then
     elseif (command:uint() == 0x36) then
         warn_undecoded(subtree, buffer(1))
