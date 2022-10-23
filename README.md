@@ -39,4 +39,17 @@ the demodulator (MN88436), then create the proper `mygica_a681_props`
 struct and `dvbsky_mygica_a681_attach` function for the device.
 
 
+## License
+
+Except where stated otherwise:
+
+* All software in this repository is made available under the
+  [Zero-Clause BSD (0BSD) license][license].
+* All copyrightable content that is not software (e.g., reverse engineering
+  notes, this README file, etc.) is licensed under the
+  [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+
 [dvbsky]: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/media/usb/dvb-usb-v2/dvbsky.c
+[license]: LICENSE.txt
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
