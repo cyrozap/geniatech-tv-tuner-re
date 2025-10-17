@@ -1,0 +1,28 @@
+000c	Home
+080a	Mute
+001d	EPG
+0825	Power
+0001	1
+0802	2
+0003	3
+0804	4
+0005	5
+0806	6
+0007	7
+0808	8
+0009	9
+0800	0
+0020	Up
+0829	BACK
+002a	Live TV
+0811	Left
+000d	OK
+0810	Right
+0012	CH Up
+082b	Vol Up
+0021	Down
+081f	REC
+0013	CH Down
+082c	Vol Down
+0017	Play
+080b	Stop
