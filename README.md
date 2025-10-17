@@ -7,6 +7,7 @@ The purpose of this repository is to reverse engineer various Geniatech ATSC/Cle
 Details on specific devices can be found in their corresponding directories:
 
 - [A681/PT681](a681_pt681)
+- [A681B/PT682C](a681b_pt682c)
 
 
 ## License
